@@ -116,17 +116,18 @@ if __name__=="__main__":
             except Exception:
                 pass
 
-        # make_schema(conn)
-
-        # students=getAllStudents(conn)
-        # addStudent(conn,'Sidiq','Akhmad','sidiq.akhmad@sudan.com','1967-03-01')
+        make_schema(conn)
         # getAllStudents(conn)
 
-        # updateStudentEmail(conn,4,'sidiq.akhmad@newdomain.com')
+        students=getAllStudents(conn)
+        addStudent(conn,'Sidiq','Akhmad','sidiq.akhmad@sudan.com','1967-03-01')
         # getAllStudents(conn)
 
-        # deleteStudent(conn,3)
+        updateStudentEmail(conn,4,'sidiq.akhmad@newdomain.com')
         # getAllStudents(conn)
+
+        deleteStudent(conn,3)
+        getAllStudents(conn)
 
     except Exception as e:
         #fatal catchpip 
