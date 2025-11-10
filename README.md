@@ -10,11 +10,16 @@ StudentID: 101331941
 
 ```bash
 https://drive.google.com/file/d/1CPESoOFj_oyhiVk5tanRK-_1Nhhr_9z_/view?usp=sharing
+
+In the video, I accidentally misread Jim Beam's name and said Josh, sorry about that!
 ```
 
 ## Install
 
 ```bash
+#clone repo
+git clone https://github.com/VanBaNguyen/PostgreSQL-Application-Programming.git
+
 # make venv
 python3 -m venv venv
 
