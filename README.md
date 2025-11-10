@@ -1,15 +1,28 @@
-# PostgreSQL-Application-Programming-COMP3005A
+# PostgreSQL-Application-Programming-COMP3005A-Assignment3
 
-# install
+## Student Info
 
+Name: Van Nguyen
+StudentID: 101331941
+
+## Demo Link
+
+
+
+# Install
 
 ```bash
+# make venv
 python3 -m venv venv
 source venv/bin/activate
-pip install psycopg2-binary
-#insure postgresql installed
-brew install postgresql@14 #if on macos like 
-brew services start postgresql
 
+#install dependency
+pip install psycopg2
 
+#connect to pgadmin and alter credentials in main guard
+
+#run main.py
+python3 main.py
+
+#python code should alter the tables (shown in video)
 ```

@@ -49,7 +49,7 @@ def addStudent(connection, first_name, last_name, email, enrollment_date):
                 INSERT INTO students (first_name, last_name, email, enrollment_date)
                 VALUES (%s, %s, %s, %s);
             """, (first_name, last_name, email, enrollment_date))
-        print("Student added successfully.")
+        print("Student added successfully.\n")
     except Exception as e:
         print(f"[DB ERROR] Failed to add student: {e}")
         try:
@@ -66,7 +66,7 @@ def updateStudentEmail(connection, student_id, new_email):
                 SET email = %s
                 WHERE student_id = %s;
             """, (new_email, student_id))
-        print("Student email updated successfully.")
+        print("Student email updated successfully.\n")
     except Exception as e:
         print(f"[DB ERROR] Failed to update student email: {e}")
         try:
@@ -82,7 +82,7 @@ def deleteStudent(connection, student_id):
                 DELETE FROM students
                 WHERE student_id = %s;
             """, (student_id,))
-        print("Student deleted successfully.")
+        print("Student deleted successfully.\n")
     except Exception as e:
         print(f"[DB ERROR] Failed to delete student: {e}")
         # rollback on error
@@ -116,19 +116,21 @@ if __name__=="__main__":
             except Exception:
                 pass
 
-        make_schema(conn)
+        # make_schema(conn)
 
-        students=getAllStudents(conn)
-        addStudent(conn,'Sidiq','Akhmad','sidiq.akhmad@example.com','1967-03-01')
-        getAllStudents(conn)
-        updateStudentEmail(conn,4,'sidiq.akhmad@newdomain.com')
-        getAllStudents(conn)
-        deleteStudent(conn,3)
-        getAllStudents(conn)
+        # students=getAllStudents(conn)
+        # addStudent(conn,'Sidiq','Akhmad','sidiq.akhmad@sudan.com','1967-03-01')
+        # getAllStudents(conn)
+
+        # updateStudentEmail(conn,4,'sidiq.akhmad@newdomain.com')
+        # getAllStudents(conn)
+
+        # deleteStudent(conn,3)
+        # getAllStudents(conn)
 
     except Exception as e:
-        #fatal catch
-        print(f"[FATAL] {e}")
+        #fatal catchpip 
+        print(f"{e}")
     finally:
         #close connection
         if conn is not None:
@@ -136,4 +138,4 @@ if __name__=="__main__":
                 conn.close()
                 print("Connection closed.")
             except Exception as e:
-                print(f"[CLOSE ERROR] {e}")
+                print(f"There was a close error: {e}")
